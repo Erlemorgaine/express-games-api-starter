@@ -28,15 +28,18 @@ module.exports = io => {
         .catch((error) => next(error))
     })
     .post('/games', authenticate, (req, res, next) => {
-      const newGame = {
-        userId: req.account._id,
-        players: [{
-          userId: req.account._id,
-          pairs: []
-        }],
-        cards: utils.shuffle('✿✪♦✵♣♠♥✖'.repeat(2).split(''))
-          .map((symbol) => ({ visible: false, symbol }))
-      }
+      // const newGame = {
+      //   userId: req.account._id,
+      //   players: [{
+      //     userId: req.account._id,
+      //     pairs: []
+      //   }],
+      //   cards: utils.shuffle('✿✪♦✵♣♠♥✖'.repeat(2).split(''))
+      //     .map((symbol) => ({ visible: false, symbol }))
+      // }
+
+      let newGame = req.body
+      newGame.authorId = req.account._id
 
       Game.create(newGame)
         .then((game) => {
