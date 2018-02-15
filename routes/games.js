@@ -34,7 +34,8 @@ module.exports = io => {
           userId: req.account._id,
           pairs: []
         }],
-        symbol: ['X', 'O']
+        symbol: ['X', 'O'],
+        squares: Array(9).fill(null)
         // symbol: utils('XO'.split(''))
         //   .map((s) => ({ visible: false, s }))
       }
