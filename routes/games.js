@@ -34,8 +34,8 @@ module.exports = io => {
           userId: req.account._id,
           pairs: []
         }],
-        cards: utils('XO'.split(''))
-          .map((symbol) => ({ visible: false, symbol }))
+        symbol: ['X', 'O'],
+        squares: Array(9).fill(null)
       }
 
       Game.create(newGame)

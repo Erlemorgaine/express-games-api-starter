@@ -18,7 +18,7 @@ io.use(socketAuth);
 
 io.on('connect', socket => {
   socket.emit('ping', `Welcome to the server, ${socket.request.user.name}`)
-  console.log(`${socket.request.user.name} connected to the server`)
+  console.log(`${socket.request.user.name} is now connected to the server`)
 })
 
 app
