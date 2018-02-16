@@ -36,8 +36,6 @@ module.exports = io => {
         }],
         symbol: ['X', 'O'],
         squares: Array(9).fill(null)
-        // symbol: utils('XO'.split(''))
-        //   .map((s) => ({ visible: false, s }))
       }
 
       Game.create(newGame)
