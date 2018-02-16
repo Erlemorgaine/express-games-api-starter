@@ -2,12 +2,6 @@
 const mongoose = require('../config/database')
 const { Schema } = mongoose
 
-// const symbolSchema = new Schema({
-//   symbol: { type: String, required: true },
-//   visible: { type: Boolean, default: false },
-//   won: { type: Boolean, default: false },
-// });
-
 const playerSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'users' },
   pairs: [String],
@@ -17,7 +11,6 @@ const playerSchema = new Schema({
 });
 
 const gameSchema = new Schema({
-  //symbol: [symbolSchema],
   symbol: { type: Array },
   squares: { type: Array },
   players: [playerSchema],
